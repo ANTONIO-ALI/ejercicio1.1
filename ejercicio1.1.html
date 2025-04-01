@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Educativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .option {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #e0e0e0;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .option.correct { background: #4CAF50; color: white; }
+        .option.wrong { background: #FF5733; color: white; }
+        #nextBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+        #result { font-size: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h2 id="question">Pregunta</h2>
+        <div id="options"></div>
+        <button id="nextBtn" onclick="nextQuestion()">Siguiente</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        const questions = [
+            { question: "¿Cuál es el río más largo del mundo?", options: ["Amazonas", "Nilo", "Yangtsé", "Misisipi"], answer: "Nilo" },
+            { question: "¿Cuántos planetas hay en el sistema solar?", options: ["7", "8", "9", "10"], answer: "8" },
+            { question: "¿Quién pintó la Mona Lisa?", options: ["Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Miguel Ángel"], answer: "Leonardo da Vinci" },
+            { question: "¿Cuál es el país más grande del mundo?", options: ["China", "Estados Unidos", "Rusia", "Canadá"], answer: "Rusia" },
+            { question: "¿Qué año comenzó la Segunda Guerra Mundial?", options: ["1914", "1939", "1945", "1950"], answer: "1939" },
+            { question: "¿Quién escribió 'Don Quijote de la Mancha'?", options: ["Miguel de Cervantes", "Gab
